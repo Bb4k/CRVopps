@@ -1,7 +1,6 @@
 library(cubature)
-package(cubature)
 
-densitateDeProbabilitate <- function(){
+is_pdf <- function(){
 
 
   my.func <- readline(prompt="Introduceti functia: ")
@@ -21,6 +20,5 @@ densitateDeProbabilitate <- function(){
 
 }
 
+is_pdf()
 
-
-densitateDeProbabilitate()
