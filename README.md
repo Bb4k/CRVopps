@@ -8,8 +8,8 @@
 - [X] 1) Fiind dată o funcție f , introdusă de utilizator, determinarea unei constante de
 normalizare k. Ȋn cazul ȋn care o asemenea constantă nu există, afișarea unui mesaj
 corespunzător către utilizator.
-- [ ] 2) Verificarea dacă o funcție introdusă de utilizator este densitate de probabilitate.
-- [ ] 3) Crearea unui obiect de tip variabilă aleatoare continuă pornind de la o densitate de
+- [X] 2) Verificarea dacă o funcție introdusă de utilizator este densitate de probabilitate.
+- [X] 3) Crearea unui obiect de tip variabilă aleatoare continuă pornind de la o densitate de
 probabilitate introdusă de utilizator. Funcția trebuie să aibă opțiunea pentru variabile
 aleatoare unidimensionale și respectiv bidimensionale.
 - [ ] 4) Reprezentarea grafică a densității și a funcției de repartiție pentru diferite valori ale
