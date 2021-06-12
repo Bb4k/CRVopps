@@ -2,21 +2,22 @@ library(cubature)
 
 norm_const <- function(){
 
+  funcText <- readline(prompt = "Introduceti functia:")
 
-  my.func <- readline(prompt="Introduceti functia: ")
+  f <- function(x){}
+
+  body(f) <- parse(text = funcText)
+
+  a <- as.integer(readline(prompt="Low: "))
+  b <- as.integer(readline(prompt="Hi: "))
+
+  if(is.na(a))
+    a <- -Inf
+  if(is.na(b))
+    b <- Inf
 
 
-  resolve1 <-  function(x){
-
-    eval(parse(text = paste('f <- function(', 'x', ') { return(' , my.func , ') }', sep='')))
-
-    return (ifelse( f(x) == Inf | f(x) == -Inf, 0, f(x)))
-
-  }
-
-
-
-  rez  <-  cubintegrate(resolve1, lower = -Inf, upper = Inf, method = 'pcubature');
+  rez  <-  cubintegrate(f, lower = a, upper = b, method = 'pcubature');
 
 
   ifelse ( is.na(rez$integral) | rez$integral == Inf | rez$integral == -Inf, "Functia introdusa nu are constanta de normalizare", 1/rez$integral )
