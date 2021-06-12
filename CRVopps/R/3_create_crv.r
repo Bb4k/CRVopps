@@ -5,19 +5,14 @@ create_crv <- function(){
 
   type <- readline(prompt="1. Unidim\n2. Bidim\n")
 
-  funcText <- readline(prompt = "Introduceti functia:")
-
-
-  f <- function(x){}
-
-  body(f) <- parse(text = funcText)
+  func_text <- readline(prompt = "Introduceti functia:")
 
   if(type == 1){
 
       a <- as.integer(readline(prompt="Low: "))
       b <- as.integer(readline(prompt="Hi: "))
 
-      crv <- c(f, a, b)
+      crv <- c(func_text, a, b)
 
       return(crv)
 
@@ -32,7 +27,8 @@ create_crv <- function(){
 
 }
 
-create_crv()
-
+test <- create_crv()
+print(test)
+print(test[1])
 
 

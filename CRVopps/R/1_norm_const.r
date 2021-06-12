@@ -2,11 +2,9 @@ library(cubature)
 
 norm_const <- function(){
 
-  funcText <- readline(prompt = "Introduceti functia:")
-
+  func_text <- readline(prompt = "Introduceti functia:")
   f <- function(x){}
-
-  body(f) <- parse(text = funcText)
+  body(f) <- parse(text = func_text)
 
   a <- as.integer(readline(prompt="Low: "))
   b <- as.integer(readline(prompt="Hi: "))
