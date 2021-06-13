@@ -9,19 +9,26 @@ create_crv <- function(){
 
   if(type == 1){
 
-      a <- as.integer(readline(prompt="Low: "))
-      b <- as.integer(readline(prompt="Hi: "))
+    x_low <- as.integer(readline(prompt="Low: "))
+    x_high <- as.integer(readline(prompt="High: "))
 
-      crv <- c(func_text, a, b)
+    crv <- c(func_text, x_low, x_high)
 
-      return(crv)
+    return(crv)
 
   }
 
   if(type == 2){
 
+    x_low <- as.integer(readline(prompt="x Low: "))
+    x_high <- as.integer(readline(prompt="x High: "))
+    y_low <- as.integer(readline(prompt="y Low: "))
+    y_high <- as.integer(readline(prompt="y High: "))
 
 
+    crv <- c(func_text, x_low, x_high, y_low, y_high)
+
+    return (crv)
   }
 
 
