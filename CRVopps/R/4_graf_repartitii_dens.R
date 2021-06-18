@@ -303,8 +303,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= location + (-5 * rate),
-          # to = location + 5 * rate,
+           from= location + (-5 * scale),
+           to = location + 5 * scale,
 
           col = "red",
           lwd = 3
