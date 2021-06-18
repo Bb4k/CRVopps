@@ -1,25 +1,30 @@
 library(cubature)
 
-norm_const <- function(){
-
-  func_text <- readline(prompt = "Introduceti functia:")
-  f <- function(x){}
-  body(f) <- parse(text = func_text)
-
-  a <- as.integer(readline(prompt="Low: "))
-  b <- as.integer(readline(prompt="Hi: "))
-
-  if(is.na(a))
-    a <- -Inf
-  if(is.na(b))
-    b <- Inf
+norm_const <- function(func){
 
 
-  rez  <-  cubintegrate(f, lower = a, upper = b, method = 'pcubature');
+  rez  <-  cubintegrate(func, lower = -Inf, upper = Inf, method = 'pcubature');
 
 
-  ifelse ( is.na(rez$integral) | rez$integral == Inf | rez$integral == -Inf, "Functia introdusa nu are constanta de normalizare", 1/rez$integral )
+  ifelse ( is.na(rez$integral) | rez$integral == Inf | rez$integral == -Inf, "Functia introdusa nu are constanta de normalizare", round(1/rez$integral) )
 
 }
 
-norm_const()
+
+f <- function(x) {
+  if(x >= 0 && x <= 1)
+    (exp(1)*(exp(-x)+exp(x)))/(exp(2)-1)
+  else 0
+}
+
+g <- function(x) {
+  if((x >= 0) && (x <= pi)) {sin(x)/2} else {0}
+}
+
+h <- function(x) {
+  if((x >= 0) && (x <= pi)) {
+    sin(x)/2
+  } else {0}
+}
+
+norm_const(f)
