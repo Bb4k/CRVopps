@@ -3,12 +3,12 @@
 #' Acesta functie realizeaza graficele densitatilor repartitiilor, respectiv
 #' functiilor de repartitie uniforme, Bernoulli, binomiale (si negativ binomiale),
 #' geometrice, hypergeometrice, exponentiale, Poisson, normale, log-normale.
-#' Weibull, Student's T, gamma, beta, Chi-Square si Cauchy. In total 16 tipuri.
+#' Weibull, Student's T, gamma, beta, Chi-Square si Cauchy. In # total 16 tipuri.
 #'
-#' @param f Densitatea de probabilitate a variabilei aleatoare continue.
+#' @param f Densitatea de probabilitate a variabilei alea# toare continue.
 #' @return Media \code{medie}, dispersia \code{dispersie},
-#' lista de momente initiale \code{vector_mom_initial},
-#' lista de momente centrate \code{vector_mom_centrate}.
+#' lista de momente initiale \code{vec# tor_mom_initial},
+#' lista de momente centrate \code{vec# tor_mom_centrate}.
 #' @examples
 #' medie_dipsersie_momente(f)
 
@@ -25,8 +25,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -2 * max,
-            to = 2 * max,
+          # from= -2 * max,
+            # to = 2 * max,
 
           col = "red",
           lwd = 3
@@ -39,8 +39,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = mean + (-2 * sd),
-            to = mean + 2 * sd,
+          # from= mean + (-2 * sd),
+            # to = mean + 2 * sd,
 
           col = "red",
           lwd = 3
@@ -53,8 +53,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -rate,
-            to = rate,
+          # from= -rate,
+            # to = rate,
 
           col = "red",
           lwd = 3
@@ -68,8 +68,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = location + (-5 * rate),
-            to = location + 5 * rate,
+          # from= location + (-5 * rate),
+            # to = location + 5 * rate,
 
           col = "red",
           lwd = 3
@@ -82,8 +82,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = 0,
-            to = 1,
+          # from= 0,
+            # to = 1,
           # limitele sunt atinse pt x={0,1}
           # abaterea =  shape1*shape2/((shape1 + shape2)^2*(shape1+shape2+1))
           # media = shape1/(shape1 + shape2)
@@ -100,8 +100,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = 0,
-            to = rate * (shape<rate) + shape * (shape>=rate),
+          # from= 0,
+            # to = rate * (shape<rate) + shape * (shape>=rate),
 
           col = "red",
           lwd = 3
@@ -128,8 +128,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = exp(meanlog + sdlog) - exp(meanlog + sdlog)*(exp(sdlog)-1),
-            to = exp(meanlog + sdlog) + exp(meanlog + sdlog)*(exp(sdlog)-1),
+          from= meanlog-3*sdlog,
+             to = meanlog+3*sdlog,
 
           # media - abaterea = exp(meanlog + 1/2*(sdlog^2)) + exp(2*meanlog + sdlog^2)*(exp(sdlog^2)-1)
 
@@ -144,8 +144,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -prob,
-            to = prob,
+          # from= -prob,
+            # to = prob,
 
           col = "red",
           lwd = 3
@@ -158,8 +158,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -(prob^2),
-          to = prob^2,
+          # from= -(prob^2),
+          # to = prob^2,
 
           col = "red",
           lwd = 3
@@ -172,8 +172,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -(prob^2),
-          to = prob^2,
+          # from= -(prob^2),
+          # to = prob^2,
 
           col = "red",
           lwd = 3
@@ -186,8 +186,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -(prob^2),
-          to = prob^2,
+          # from= -(prob^2),
+          # to = prob^2,
 
           col = "red",
           lwd = 3
@@ -200,8 +200,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = 0,
-            to = m+n,
+          # from= 0,
+            # to = m+n,
 
           col = "red",
           lwd = 3
@@ -214,8 +214,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -lambda,
-          to = lambda^2,
+          # from= -lambda,
+          # to = lambda^2,
 
           col = "red",
           lwd = 3
@@ -228,8 +228,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = -shape*scale,
-          to = shape*scale,
+          # from= -shape*scale,
+          # to = shape*scale,
 
           col = "red",
           lwd = 3
@@ -242,8 +242,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          from = 0,
-          to = ncp + ncp*df,
+          # from= 0,
+          # to = ncp + ncp*df,
 
           col = "red",
           lwd = 3
@@ -261,8 +261,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = -3 * max,
-            to = 3 * max,
+          # from= -3 * max,
+            # to = 3 * max,
 
           col = "red",
           lwd = 3
@@ -275,8 +275,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = mean + (-2 * sd),
-            to = mean + 2 * sd,
+          # from= mean + (-2 * sd),
+            # to = mean + 2 * sd,
 
           col = "red",
           lwd = 3
@@ -289,8 +289,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = 0,
-          to = rate * (shape<rate) + shape * (shape>=rate),
+          # from= 0,
+          # to = rate * (shape<rate) + shape * (shape>=rate),
 
           col = "red",
           lwd = 3
@@ -303,8 +303,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = location + (-5 * rate),
-          to = location + 5 * rate,
+          # from= location + (-5 * rate),
+          # to = location + 5 * rate,
 
           col = "red",
           lwd = 3
@@ -317,8 +317,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = 0,
-          to = 1,
+          # from= 0,
+          # to = 1,
 
           col = "red",
           lwd = 3
@@ -331,8 +331,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = 0,
-          to = rate * (shape<rate) + shape * (shape>=rate),
+          # from= 0,
+          # to = rate * (shape<rate) + shape * (shape>=rate),
 
           col = "red",
           lwd = 3
@@ -345,8 +345,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = 0,
-          to = ncp + ncp*df,
+          # from= 0,
+          # to = ncp + ncp*df,
 
           col = "red",
           lwd = 3
@@ -359,8 +359,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = exp(meanlog + sdlog) - exp(meanlog + sdlog)*(exp(sdlog)-1),
-          to = exp(meanlog + sdlog) + exp(meanlog + sdlog)*(exp(sdlog)-1),
+          # from= exp(meanlog + sdlog) - exp(meanlog + sdlog)*(exp(sdlog)-1),
+          # to = exp(meanlog + sdlog) + exp(meanlog + sdlog)*(exp(sdlog)-1),
 
           col = "red",
           lwd = 3
@@ -373,8 +373,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = -prob*100,
-            to = prob*100,
+          # from= -prob*100,
+            # to = prob*100,
 
           col = "red",
           lwd = 3
@@ -387,8 +387,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = -prob*100,
-          to = prob*100,
+          # from= -prob*100,
+          # to = prob*100,
 
           col = "red",
           lwd = 3
@@ -401,8 +401,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = -(prob^2),
-          to = prob^2,
+          # from= -(prob^2),
+          # to = prob^2,
 
           col = "red",
           lwd = 3
@@ -415,8 +415,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = -(prob^2),
-          to = prob^2,
+          # from= -(prob^2),
+          # to = prob^2,
 
           col = "red",
           lwd = 3
@@ -429,8 +429,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = 0,
-          to = m+n,
+          # from= 0,
+          # to = m+n,
 
           col = "red",
           lwd = 3
@@ -443,8 +443,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = -lambda,
-          to = lambda^2,
+          # from= -lambda,
+          # to = lambda^2,
 
           col = "red",
           lwd = 3
@@ -457,8 +457,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = -shape*scale,
-          to = shape*scale,
+          # from= -shape*scale,
+          # to = shape*scale,
 
           col = "red",
           lwd = 3
@@ -471,8 +471,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          from = 0,
-          to = ncp + ncp*df,
+          # from= 0,
+          # to = ncp + ncp*df,
 
           col = "red",
           lwd = 3
@@ -557,7 +557,7 @@ graf_repartitii_dens <- function()
              {
                meanlog = as.numeric(readline(prompt = "meanlog: "))
                sdlog = as.numeric(readline(prompt = "sdlog: "))
-               dens_log(meanlog = meanlog, sdlog)
+               dens_lnorm(meanlog = meanlog, sdlog)
              },
              {
                df = as.numeric(readline(prompt = "df: "))
@@ -577,7 +577,7 @@ graf_repartitii_dens <- function()
              {
                df = as.numeric(readline(prompt = "df: "))
                ncp = as.numeric(readline(prompt = "ncp: "))
-               dens_chi_square(df, ncp)
+               dens_chisq(df, ncp)
              },
              {
                location = as.numeric(readline(prompt = "location: "))
@@ -662,7 +662,7 @@ graf_repartitii_dens <- function()
              {
                meanlog = as.numeric(readline(prompt = "meanlog: "))
                sdlog = as.numeric(readline(prompt = "sdlog: "))
-               rep_log(meanlog = meanlog, sdlog)
+               rep_lnorm(meanlog = meanlog, sdlog)
              },
              {
                df = as.numeric(readline(prompt = "df: "))
@@ -682,7 +682,7 @@ graf_repartitii_dens <- function()
              {
                df = as.numeric(readline(prompt = "df: "))
                ncp = as.numeric(readline(prompt = "ncp: "))
-               rep_chi_square(df, ncp)
+               rep_chisq(df, ncp)
              },
              {
                location = as.numeric(readline(prompt = "location: "))
@@ -705,7 +705,7 @@ graf_repartitii_dens <- function()
 
     # numeric_only[[1]][1] = primul elem
     # numeric_only[[1]][2] = al doilea elem
-    # convertesc stringurile in tipul de data corespunzator
+    # convertesc stringurile in tipul de data corespunza# tor
     a <- type.convert(numeric_only[[1]][1])
     b <- type.convert(numeric_only[[1]][2])
 
@@ -733,7 +733,7 @@ graf_repartitii_dens <- function()
   meniu <- function() {
     cat("1. Meniu Densitati Repartiție\n")
     cat("2. Meniu Funcți de Repartiție\n")
-    cat("3. Functie aleatoare.\n")
+    cat("3. Functie alea# toare.\n")
 
     option <- as.numeric(readline(prompt = "Optiunea: "))
 
@@ -749,3 +749,4 @@ graf_repartitii_dens <- function()
 
   meniu()
 }
+
