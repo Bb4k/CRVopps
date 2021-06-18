@@ -275,8 +275,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= mean + (-2 * sd),
-            # to = mean + 2 * sd,
+           from= mean + (-2 * sd),
+             to = mean + 2 * sd,
 
           col = "red",
           lwd = 3
