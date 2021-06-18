@@ -4,13 +4,6 @@
 #' functiilor de repartitie uniforme, Bernoulli, binomiale (si negativ binomiale),
 #' geometrice, hypergeometrice, exponentiale, Poisson, normale, log-normale.
 #' Weibull, Student's T, gamma, beta, Chi-Square si Cauchy. In # total 16 tipuri.
-#'
-#' @param f Densitatea de probabilitate a variabilei alea# toare continue.
-#' @return Media \code{medie}, dispersia \code{dispersie},
-#' lista de momente initiale \code{vec# tor_mom_initial},
-#' lista de momente centrate \code{vec# tor_mom_centrate}.
-#' @examples
-#' medie_dipsersie_momente(f)
 
 library("statip")
 require("statip")
