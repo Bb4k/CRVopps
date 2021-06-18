@@ -12,14 +12,14 @@ corespunzător către utilizator.
 - [X] 3) Crearea unui obiect de tip variabilă aleatoare continuă pornind de la o densitate de
 probabilitate introdusă de utilizator. Funcția trebuie să aibă opțiunea pentru variabile
 aleatoare unidimensionale și respectiv bidimensionale.
-- [ ] 4) Reprezentarea grafică a densității și a funcției de repartiție pentru diferite valori ale
+- [X] 4) Reprezentarea grafică a densității și a funcției de repartiție pentru diferite valori ale
 parametrilor repartiției. Ȋn cazul ȋn care funcția de repartiție nu este dată ȋntr-o formă
 explicită(ex. repartiția normală) se acceptă reprezentarea grafică a unei aproximări a
 acesteia.
-- [ ] 5) Calculul mediei, dispersiei și a momentelor inițiale și centrate pȃnă la ordinul 4(dacă
+- [X] 5) Calculul mediei, dispersiei și a momentelor inițiale și centrate pȃnă la ordinul 4(dacă
 există). Atunci cȃnd unul dintre momente nu există, se va afișa un mesaj
 corespunzător către utilizator.
-- [ ] 6) Calculul mediei și dispersiei unei variabile aleatoare g(X), unde X are o repartiție
+- [X] 6) Calculul mediei și dispersiei unei variabile aleatoare g(X), unde X are o repartiție
 continuă cunoscută iar g este o funcție continuă precizată de utilizator.
 - [x] 7) Crearea unei funcții P care permite calculul diferitelor tipuri de probabilități asociate
 unei variabile aleatoare continue(similar funcției P din pachetul discreteRV)
@@ -31,7 +31,7 @@ aleatoare continue( solicitați material suport pentru partea de simulare).
 - [ ] 10) Calculul covarianței și coeficientului de corelație pentru două variabile aleatoare
 continue(Atenție:Trebuie să folosiți densitatea comună a celor două variabile
 aleatoare!)
-- [ ] 11) Pornind de la densitatea comună a două variabile aleatoare continue, construirea
+- [X] 11) Pornind de la densitatea comună a două variabile aleatoare continue, construirea
 densităților marginale și a densităților condiționate.
 - [ ] 12) Construirea sumei și diferenței a două variabile aleatoare continue
 independente(folosiți formula de convoluție)
