@@ -1,105 +1,362 @@
-#' Reprezentarea grafică a densității și a funcției de repartiție pentru diferite
-#' valori ale parametrilor repartiției. Ȋn cazul ȋn care funcția de repartiție
-#' nu este dată ȋntr-o formă explicită (ex. repartiția normală) se acceptă
-#' reprezentarea grafică a unei aproximări a acesteia.
+# Densitati de repartitie -------------------------------------------------
+
+dens_unif <- function(min, max){
+  curve(expr = dunif(x = x, min = min, max = max),
+        main = "The Uniform Distribution",
+        xlab = "x",
+        ylab = "f(x)",
+
+        from = -2 * max,
+          to = 2 * max,
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+dens_norm <- function(mean, sd){
+  curve(expr = dnorm(x = x, mean = mean, sd = sd),
+        main = "The Normal Distribution",
+        xlab = "x",
+        ylab = "f(x)",
+
+        from = mean + (-2 * sd),
+          to = mean + 2 * sd,
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+dens_exp <- function(rate){
+  curve(expr = dexp(x = x, rate = rate),
+        main = "The Exponential Distribution",
+        xlab = "x",
+        ylab = "f(x)",
+
+        from = -rate,
+          to = rate,
+
+        col = "red",
+        lwd = 3
+  )
+}
 
 
-# notite ------------------------------------------------------------------
-# Vom folosi qnorm si alte astfel de functii pt plotare. Practic
-# pt fiecare valoare x, spunem procentul acela, iar plotarea se va face
-# singura.
-# https://www.statmethods.net/advgraphs/probability.html
-# https://gtpb.github.io/ABSTAT18/assets/Day_1/RDistributions.pdf
-#
-# > x <- rnorm(cate numere sa genereze)
+dens_cauchy <- function(location, scale){
+  curve(expr = dcauchy(x = x, location = location, scale = scale),
+        main = "The Cauchy Distribution",
+        xlab = "x",
+        ylab = "f(x)",
 
+        from = location + (-5 * rate),
+          to = location + 5 * rate,
 
-# list_x = vector de valori pe care sa fie aplicata functia f
-#
-# > dx <- density(as.numeric(unlist(lapply(lista_x, f))))
-# > plot(dx, lwd = 2, col = "red", main = "Density")
-# > rug(jitter(x))
+        col = "red",
+        lwd = 3
+  )
+}
 
+dens_beta <- function(shape1, shape2){
+  curve(expr = dbeta(x = x, shape1 = shape1, shape2 = shape2),
+        main = "The Beta Distribution",
+        xlab = "x",
+        ylab = "f(x)",
 
-# runif(cate numere sa genereze, min, max) => numeric vector
-# ex: runif(500, -100, 100)
-# > dx <- density(as.numeric(unlist(lapply(runif(500, a, b), f))))
+        from = 0,
+          to = 1,
+        # limitele sunt atinse pt x={0,1}
+        # abaterea =  shape1*shape2/((shape1 + shape2)^2*(shape1+shape2+1))
+        # media = shape1/(shape1 + shape2)
+        # dar nu am reusit sa creez o formula cu ele
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+dens_gamma <- function(shape, rate){
+  curve(expr = dgamma(x = x, shape = shape, rate = rate),
+        main = "The Gamma Distribution",
+        xlab = "x",
+        ylab = "f(x)",
+
+        from = 0,
+          to = rate * (shape<rate) + shape * (shape>=rate),
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+dens_chisq <- function(df, ncp){
+  curve(expr = dchisq(x = x, df = df, ncp = ncp),
+        main = "The (non-central) Chi-Squared Distribution",
+        xlab = "x",
+        ylab = "f(x)",
+
+        from = 0,
+          to = ncp + ncp*df,
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+dens_lnorm <- function(meanlog, sdlog){
+  curve(expr = dlnorm(x = x, meanlog = meanlog, sdlog = sdlog),
+        main = "The Log Normal Distribution",
+        xlab = "x",
+        ylab = "f(x)",
+
+        from = exp(meanlog + sdlog) - exp(meanlog + sdlog)*(exp(sdlog)-1),
+          to = exp(meanlog + sdlog) + exp(meanlog + sdlog)*(exp(sdlog)-1),
+
+        # media - abaterea = exp(meanlog + 1/2*(sdlog^2)) + exp(2*meanlog + sdlog^2)*(exp(sdlog^2)-1)
+
+        col = "red",
+        lwd = 3
+  )
+}
 
 # -------------------------------------------------------------------------
 
 
+# Functii de Repartitii ---------------------------------------------------
 
-# constructor pentru functii
-make_func <- function(x){
-  x;
-  function() x
+rep_unif <- function(min, max){
+  curve(expr = punif(q = x, min = min, max = max),
+        main = "The Uniform Distribution Function",
+        xlab = "x",
+        ylab = "F(x)",
+
+        from = -3 * max,
+          to = 3 * max,
+
+        col = "red",
+        lwd = 3
+  )
 }
 
-# voi face o lista de functii
-func_list <- list()
+rep_norm <- function(mean, sd){
+  curve(expr = pnorm(q = x, mean = mean, sd = sd),
+        main = "The Normal Distribution Function",
+        xlab = "x",
+        ylab = "F(x)",
 
-# vectori auxiliari pt intervalele
-# vector_low <- c()
-# vector_hi <- c()
+        from = mean + (-2 * sd),
+          to = mean + 2 * sd,
 
-# Primesc de la tastatura nr de ramuri, pentru a face "alocarile" dinamic
-n <- readline(prompt = "Cate ramuri are functia:")
-
-for (i in 1:n){
-  # anunt pt ce ramura introducem date
-  sprintf("Ramura %d:", n)
-
-  # citesc functia si o parsez pe pozitia i din lista de functii
-  func_text <- readline(prompt = "Introduceti functia:")
-  body(func_list[[i]]) <- parse(text = func_text)
-
-  interval <- readline(prompt = "Introduceti intervalul (ex: [0,1)): ")
-
-  # pastrez doar numerele si virgula dintre ele
-  # fara paranteze, fara spatii, fara nimic altceva
-  numeric_only <- strsplit(gsub("[^0-9,.]", "", interval), ",")
-
-  # numeric_only[[1]][1] = primul elem
-  # numeric_only[[1]][2] = al doilea elem
-  # convertesc stringurile in tipul de data corespunzator
-  a <- type.convert(numeric_only[[1]][1])
-  b <- type.convert(numeric_only[[1]][2])
-
-
-  # reprezentarea grafica nu accepta valori infinite
-  if(is.na(a))
-    a <- -5000
-  if(is.na(b))
-    b <- 5000
-
-  if (grepl("(", interval)){
-    a <- a-1
-  }
-
-  if (grepl(")", interval)){
-    b <- b-1
-  }
-
-
-  # le adaug in listele aferente
-  # astfel, pozitia i din toate cele 5 liste pe care le cream
-  # va determina functia corespunzatoare ramurei i
-  vector_low <- c(vector_low, a)
-  vector_hi  <- c(vector_hi, b)
-
-
-
-
-  # curata consola pentru a nu crea confuzie
-  cat("\014")
+        col = "red",
+        lwd = 3
+  )
 }
 
-# transform vectorii auxiliari pt intervale intr-un
-# tabel cu 4 coloane. Format:
-#      [,1] [,2]   [,3]   [,4]
-# [1,] "["  "3.12" "17"   ")"
-# [2,] "["  "0"    "1"    ")"
-# [3,] "("  "1"    "3"    "]"
-# [4,] "["  "4.44" "5.55" "]"
-interval_array <- array(c(vector_st,vector_low,vector_hi,vector_dr),dim = c(n,4))
+rep_exp <- function(rate){
+  curve(expr = pexp(q = x, rate = rate),
+        main = "The Gamma Distribution",
+        xlab = "x",
+        ylab = "F(x)",
 
+        from = 0,
+        to = rate * (shape<rate) + shape * (shape>=rate),
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+rep_cauchy <- function(location, scale){
+  curve(expr = pcauchy(q = x, location = location, scale = scale),
+        main = "The Cauchy Distribution Function",
+        xlab = "x",
+        ylab = "F(x)",
+
+        from = location + (-5 * rate),
+        to = location + 5 * rate,
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+rep_beta <- function(shape1, shape2){
+  curve(expr = pbeta(q = x, shape1 = shape1, shape2 = shape2),
+        main = "The Beta Distribution Function",
+        xlab = "x",
+        ylab = "F(x)",
+
+        from = 0,
+        to = 1,
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+rep_gamma <- function(shape, rate){
+  curve(expr = pgamma(q = x, shape = shape, rate = rate),
+        main = "The Gamma Distribution Function",
+        xlab = "x",
+        ylab = "F(x)",
+
+        from = 0,
+        to = rate * (shape<rate) + shape * (shape>=rate),
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+rep_chisq <- function(ncp){
+  curve(expr = pchisq(q = x, ncp = ncp),
+        main = "The (non-central) Chi-Squared Distribution Function",
+        xlab = "x",
+        ylab = "F(x)",
+
+        from = 0,
+        to = ncp + ncp*df,
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+rep_lnorm <- function(meanlog, sdlog){
+  curve(expr = plnorm(q = x, meanlog = meanlog, sdlog = sdlog),
+        main = "The Log Normal Distribution Function",
+        xlab = "x",
+        ylab = "F(x)",
+
+        from = exp(meanlog + sdlog) - exp(meanlog + sdlog)*(exp(sdlog)-1),
+        to = exp(meanlog + sdlog) + exp(meanlog + sdlog)*(exp(sdlog)-1),
+
+        col = "red",
+        lwd = 3
+  )
+}
+
+# -------------------------------------------------------------------------
+
+meniu_afisare_densitati <- function() {
+  cat("Introduceți numărul corespunzător repartiției dorite.\n")
+  cat("1. Uniformă\n")
+  cat("2. Normală\n")
+  cat("3. Exponențială\n")
+  cat("4. Cauchy\n")
+  cat("5. Beta\n")
+  cat("6. Gamma\n")
+  cat("7. Chi-Square\n")
+  cat("8. Log-normală\n")
+  option <- as.numeric(readline(prompt = "Repartitia aleasă este: "))
+
+  switch(  EXPR = option,
+           {
+             min = as.numeric(readline(prompt = "min: "))
+             max = as.numeric(readline(prompt = "max: "))
+             dens_uniforma(min = min, max = max)
+           },
+           {
+             mean = as.numeric(readline(prompt = "mean: "))
+             sd = as.numeric(readline(prompt = "sd: "))
+             dens_normala(mean = mean, sd = sd)
+           },
+           {
+             rate = as.numeric(readline(prompt = "rate: "))
+             dens_exponentiala(rate = rate)
+           },
+           {
+             location = as.numeric(readline(prompt = "location: "))
+             scale = as.numeric(readline(prompt = "scale: "))
+             dens_cauchy(location = location, scale = scale)
+           },
+           {
+             shape1 = as.numeric(readline(prompt = "shape1: "))
+             shape2 = as.numeric(readline(prompt = "shape2: "))
+             dens_beta(shape1 = shape1, shape2 = shape2)
+           },
+           {
+             shape = as.numeric(readline(prompt = "shape: "))
+             rate = as.numeric(readline(prompt = "rate: "))
+             dens_gamma(shape = shape, rate = rate)
+           },
+           {
+             df = as.numeric(readline(prompt = "df: "))
+             ncp = as.numeric(readline(prompt = "ncp: "))
+             dens_chi_square(ncp = ncp)
+           },
+           {
+             meanlog = as.numeric(readline(prompt = "meanlog: "))
+             sdlog = as.numeric(readline(prompt = "sdlog: "))
+             dens_log(meanlog = meanlog, sdlog = sdlog)
+           }
+  )
+}
+
+meniu_afisare_functie_repartitie <- function() {
+  cat("Introduceți numărul corespunzător repartiției dorite.\n")
+  cat("1. Repartiție uniformă\n")
+  cat("2. Repartiție normală\n")
+  cat("3. Repartiție exponențială\n")
+  cat("4. Repartiția Cauchy\n")
+  cat("5. Repartiția Beta\n")
+  cat("6. Repartiția Gamma\n")
+  cat("7. Repartiția Chi-Square\n")
+  cat("8. Repartiția Log-normală\n")
+  option <- as.numeric(readline(prompt = "Repartitia aleasă este: "))
+
+  switch(  EXPR = option,
+           {
+             min = as.numeric(readline(prompt = "Min: "))
+             max = as.numeric(readline(prompt = "Max: "))
+             rep_uniforma(min = min, max = max)
+           },
+           {
+             mean = as.numeric(readline(prompt = "Mean: "))
+             sd = as.numeric(readline(prompt = "Sd: "))
+             rep_normala(mean = mean, sd = sd)
+           },
+           {
+             rate = as.numeric(readline(prompt = "Rate: "))
+             rep_exponentiala(rate = rate)
+           },
+           {
+             location = as.numeric(readline(prompt = "Location: "))
+             scale = as.numeric(readline(prompt = "Scale: "))
+             rep_cauchy(location = location, scale = scale)
+           },
+           {
+             shape1 = as.numeric(readline(prompt = "Shape1: "))
+             shape2 = as.numeric(readline(prompt = "Shape2: "))
+             rep_beta(shape1 = shape1, shape2 = shape2)
+           },
+           {
+             shape = as.numeric(readline(prompt = "Shape: "))
+             rate = as.numeric(readline(prompt = "Rate: "))
+             rep_gamma(shape = shape, rate = rate)
+           },
+           {
+             ncp = as.numeric(readline(prompt = "Ncp: "))
+             rep_chi_square(ncp = ncp)
+           },
+           {
+             meanlog = as.numeric(readline(prompt = "Meanlog: "))
+             sdlog = as.numeric(readline(prompt = "Sdlog: "))
+             rep_log(meanlog = meanlog, sdlog = sdlog)
+           }
+  )
+}
+
+meniu_afisare_grafice <- function() {
+  cat("Introduceți un număr din lista de mai jos:\n")
+  cat("1. Afișare Densitate Repartiție\n")
+  cat("2. Afișare Funcție de Repartiție\n")
+
+  option <- as.numeric(readline(prompt = "Numărul ales este: "))
+  switch(EXPR = option,
+         meniu_afisare_densitati(),
+         meniu_afisare_functie_repartitie()
+  )
+}
+
+meniu_afisare_grafice()
