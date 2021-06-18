@@ -100,8 +100,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          # from= 0,
-            # to = rate * (shape<rate) + shape * (shape>=rate),
+           from= 0,
+             to = rate * (shape<rate) + shape * (shape>=rate),
 
           col = "red",
           lwd = 3
@@ -242,8 +242,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          # from= 0,
-          # to = ncp + ncp*df,
+           from= 0,
+           to = ncp + ncp*df,
 
           col = "red",
           lwd = 3
