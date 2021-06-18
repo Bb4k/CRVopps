@@ -733,7 +733,7 @@ graf_repartitii_dens <- function()
   meniu <- function() {
     cat("1. Meniu Densitati Repartiție\n")
     cat("2. Meniu Funcți de Repartiție\n")
-    cat("3. Functie alea# toare.\n")
+    cat("3. Functie aleatoare.\n")
 
     option <- as.numeric(readline(prompt = "Optiunea: "))
 
