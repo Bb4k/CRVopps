@@ -401,8 +401,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= -(prob^2),
-          # to = prob^2,
+           from= -(prob^5),
+           to = prob^2,
 
           col = "red",
           lwd = 3
