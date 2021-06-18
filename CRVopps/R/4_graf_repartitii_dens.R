@@ -228,8 +228,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          # from= -shape*scale,
-          # to = shape*scale,
+           from= 0,
+           to = 4,
 
           col = "red",
           lwd = 3
