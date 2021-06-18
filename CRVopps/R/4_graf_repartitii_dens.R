@@ -415,8 +415,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= -(prob^2),
-          # to = prob^2,
+           from= -(prob^2),
+           to = prob^2,
 
           col = "red",
           lwd = 3
@@ -429,8 +429,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= 0,
-          # to = m+n,
+           from= -(m+n)/2,
+          to = (m+n)/2,
 
           col = "red",
           lwd = 3
@@ -443,8 +443,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= -lambda,
-          # to = lambda^2,
+           from= -lambda,
+          to = lambda^2,
 
           col = "red",
           lwd = 3
@@ -457,8 +457,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= -shape*scale,
-          # to = shape*scale,
+          from= 0,
+           to = 4,
 
           col = "red",
           lwd = 3
@@ -471,8 +471,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= 0,
-          # to = ncp + ncp*df,
+           from= 0,
+           to = ncp + ncp*df,
 
           col = "red",
           lwd = 3
