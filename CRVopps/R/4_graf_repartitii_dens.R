@@ -25,8 +25,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          # from= -2 * max,
-            # to = 2 * max,
+           from= -2 * max,
+             to = 2 * max,
 
           col = "red",
           lwd = 3
