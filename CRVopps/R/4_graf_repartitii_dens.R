@@ -331,22 +331,22 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= 0,
-          # to = rate * (shape<rate) + shape * (shape>=rate),
+           from= 0,
+           to = rate * (shape<rate) + shape * (shape>=rate),
 
           col = "red",
           lwd = 3
     )
   }
 
-  rep_chisq <- function(ncp){
-    curve(expr = pchisq(q = x, ncp = ncp),
+  rep_chisq <- function(df, ncp){
+    curve(expr = pchisq(q = x, df = df, ncp = ncp),
           main = "The (non-central) Chi-Squared Distribution Function",
           xlab = "x",
           ylab = "F(x)",
 
-          # from= 0,
-          # to = ncp + ncp*df,
+          from= 0,
+          to = ncp + ncp*df,
 
           col = "red",
           lwd = 3
