@@ -510,7 +510,7 @@ graf_repartitii_dens <- function()
              {
                min = as.numeric(readline(prompt = "min: "))
                max = as.numeric(readline(prompt = "max: "))
-               dens_uniforma(min, max)
+               dens_unif(min, max)
              },
              {
                prob = as.numeric(readline(prompt = "prob: "))
@@ -615,7 +615,7 @@ graf_repartitii_dens <- function()
              {
                min = as.numeric(readline(prompt = "min: "))
                max = as.numeric(readline(prompt = "max: "))
-               rep_uniforma(min, max)
+               rep_unif(min, max)
              },
              {
                prob = as.numeric(readline(prompt = "prob: "))
