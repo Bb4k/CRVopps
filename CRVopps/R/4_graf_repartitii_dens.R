@@ -82,8 +82,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          # from= 0,
-            # to = 1,
+           from= 0,
+             to = 1,
           # limitele sunt atinse pt x={0,1}
           # abaterea =  shape1*shape2/((shape1 + shape2)^2*(shape1+shape2+1))
           # media = shape1/(shape1 + shape2)
