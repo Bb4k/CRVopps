@@ -39,8 +39,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          # from= mean + (-2 * sd),
-            # to = mean + 2 * sd,
+          from = mean + (-2 * sd),
+            to = mean + 2 * sd,
 
           col = "red",
           lwd = 3
@@ -547,7 +547,7 @@ graf_repartitii_dens <- function()
              {
                mean = as.numeric(readline(prompt = "mean: "))
                sd = as.numeric(readline(prompt = "sd: "))
-               dens_normal(mean, sd)
+               dens_norm(mean, sd)
              },
              {
                shape = as.numeric(readline(prompt = "shape: "))
@@ -652,7 +652,7 @@ graf_repartitii_dens <- function()
              {
                mean = as.numeric(readline(prompt = "mean: "))
                sd = as.numeric(readline(prompt = "sd: "))
-               rep_normal(mean, sd)
+               rep_norm(mean, sd)
              },
              {
                shape = as.numeric(readline(prompt = "shape: "))
