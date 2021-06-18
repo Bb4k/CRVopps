@@ -359,8 +359,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "F(x)",
 
-          # from= exp(meanlog + sdlog) - exp(meanlog + sdlog)*(exp(sdlog)-1),
-          # to = exp(meanlog + sdlog) + exp(meanlog + sdlog)*(exp(sdlog)-1),
+           from= meanlog - 2^exp(sdlog),
+           to = meanlog + 2^exp(sdlog),
 
           col = "red",
           lwd = 3
