@@ -24,6 +24,6 @@ sum <- Vectorize(convolution_sum(f, g))
 sub <- Vectorize(convolution_diff(f, g))
 
 
-par(mfrow=c(0,2))
+par(mfrow=c(2,2))
 plot(sum,from=-5,to=6,type="l")
 plot(sub,from=-5,to=6,type="l")
