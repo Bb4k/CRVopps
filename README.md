@@ -1,10 +1,23 @@
 # CRVopps - Continuous Random Variables opperations
-   - needed packages devtools, roxygen2, pcubature (for integrals)
-   - for each function you need a new r script (CTRL+SHIFT+N)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#Contributors-)
+
+This project was developed during the university and served as the final project for the subject Probability and Statistics. The aim of the project is to develop an R package for working with continuous random variables.
+
+## R packages used in this project (they must be installed in order to use the package)
+
+   - devtools
+   - roxygen2
+   - pcubature
+   - statip
+   - pracma
+   - Ryacas
+
+## Package commands
+
    - for build use CTRL+SHIFT+B
  
-# Cerinte proiect
- 
+## Project requirements (in Romanian)
+
 - [X] 1) Fiind dată o funcție f , introdusă de utilizator, determinarea unei constante de
 normalizare k. Ȋn cazul ȋn care o asemenea constantă nu există, afișarea unui mesaj
 corespunzător către utilizator.
@@ -35,3 +48,14 @@ aleatoare!)
 densităților marginale și a densităților condiționate.
 - [X] 12) Construirea sumei și diferenței a două variabile aleatoare continue
 independente(folosiți formula de convoluție)
+
+## Contributors
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/DragosBalmau"><img src="https://avatars.githubusercontent.com/u/30263894?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dragoș C. Bălmău</b></sub></a></td>
+    <td align="center"><a href="https://github.com/TIPYexe"><img src="https://avatars.githubusercontent.com/u/53595545?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Robert A. Nicolescu</b></sub></a></td>
+    <td align="center"><a href="https://github.com/VictorAndreiCotescu"><img src="https://avatars.githubusercontent.com/u/63092892?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victir A. Cotescu</b></sub></a></td>
+  </tr>
+</table>
+
