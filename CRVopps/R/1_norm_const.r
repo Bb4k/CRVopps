@@ -2,11 +2,9 @@ library(cubature)
 
 norm_const <- function(func){
 
+  rez  <-  cubintegrate(func, lower = -Inf, upper = Inf, method = 'pcubature')
 
-  rez  <-  cubintegrate(func, lower = -Inf, upper = Inf, method = 'pcubature');
-
-
-  ifelse ( is.na(rez$integral) | rez$integral == Inf | rez$integral == -Inf, "Functia introdusa nu are constanta de normalizare", round(1/rez$integral) )
+  ifelse ( is.na(rez$integral) | rez$integral == Inf | rez$integral == -Inf | rez$integral == 0, "Functia introdusa nu are constanta de normalizare", 1/rez$integral )
 
 }
 

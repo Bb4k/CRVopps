@@ -30,5 +30,5 @@ div <- function(x){
 }
 
 
-is_pdf(div)
+is_pdf(f)
 

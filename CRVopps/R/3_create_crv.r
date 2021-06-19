@@ -45,7 +45,5 @@ h <- function(x) {
 }
 
 test <- create_crv(f)
-print(test)
-print(test[1])
 
 
