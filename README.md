@@ -1,5 +1,7 @@
 # CRVopps - Continuous Random Variables opperations
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](https://github.com/Bb4k/CRVopps/blob/main/README.md#contributors)
+[![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/Bb4k/CRVopps/blob/main/LICENSE)
+
 
 This project was developed during the university and served as the final project for the subject Probability and Statistics. The aim of the project is to develop an R package for working with continuous random variables.
 
@@ -58,4 +60,3 @@ independente(folosiți formula de convoluție)
     <td align="center"><a href="https://github.com/VictorAndreiCotescu"><img src="https://avatars.githubusercontent.com/u/63092892?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victir A. Cotescu</b></sub></a></td>
   </tr>
 </table>
-
