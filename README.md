@@ -1,5 +1,5 @@
 # CRVopps - Continuous Random Variables opperations
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#Contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](##contributors-)
 
 This project was developed during the university and served as the final project for the subject Probability and Statistics. The aim of the project is to develop an R package for working with continuous random variables.
 
