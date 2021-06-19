@@ -57,6 +57,6 @@ independente(folosiți formula de convoluție)
   <tr>
     <td align="center"><a href="https://github.com/DragosBalmau"><img src="https://avatars.githubusercontent.com/u/30263894?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dragoș C. Bălmău</b></sub></a></td>
     <td align="center"><a href="https://github.com/TIPYexe"><img src="https://avatars.githubusercontent.com/u/53595545?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Robert A. Nicolescu</b></sub></a></td>
-    <td align="center"><a href="https://github.com/VictorAndreiCotescu"><img src="https://avatars.githubusercontent.com/u/63092892?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victir A. Cotescu</b></sub></a></td>
+    <td align="center"><a href="https://github.com/VictorAndreiCotescu"><img src="https://avatars.githubusercontent.com/u/63092892?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victor A. Cotescu</b></sub></a></td>
   </tr>
 </table>
