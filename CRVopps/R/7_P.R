@@ -16,8 +16,7 @@ P <- function(crv){
       cubintegrate(func_x, lower = as.integer(crv[2]),   upper = number_x,  method = "pcubature"),
       cubintegrate(func_x, lower = number_x, upper = as.integer(crv[3]),    method = "pcubature")
     )
-    print(val_x$integral)
-    return
+    print(1/val_x$integral)
 
   }
 
@@ -47,14 +46,12 @@ P <- function(crv){
       ),
     )
 
-    print(val_x$Q)
-
-    return
+    print(1/val_x$Q)
   }
 }
 
 
-crv_bi  <- c("y*x+1", 0, 10, 2, 7)
-crv_uni <- c("x+1", 0, 10)
+crv_bi  <- c("exp(1)^(-((x^2)/2))", 0, 10, 2, 7)
+crv_uni <- c("exp(1)^(-((x^2)/2))", 0, 10)
 
 P(crv_bi)

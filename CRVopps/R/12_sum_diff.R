@@ -1,5 +1,3 @@
-library(pracma)
-
 convolution_sum <- function(fx,fy) {
   function(z) {
     integrate(function(y) {
@@ -18,7 +16,7 @@ convolution_diff <- function(fx,fy) {
 }
 
 
-f <- function(x)(dnorm(x,1)) #distributie normala cu mean = 1
+f <- function(x)(dnorm(x,1))
 g <- function(x) (dnorm(x,2))
 sum <- Vectorize(convolution_sum(f, g))
 sub <- Vectorize(convolution_diff(f, g))
