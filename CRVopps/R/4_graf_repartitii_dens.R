@@ -146,13 +146,13 @@ graf_repartitii_dens <- function()
   }
 
   dens_binom <- function(size, prob){
-    curve(expr = dbinom(x = x, size = size, prob = prob),
+    curve(expr = dbinom(x = x*100, size = size, prob = prob),
           main = "The Binomial Distribution",
           xlab = "x",
           ylab = "f(x)",
 
-          from= -size,
-          to = size,
+          #from= -size,
+          #to = size,
 
           col = "red",
           lwd = 3
@@ -179,8 +179,8 @@ graf_repartitii_dens <- function()
           xlab = "x",
           ylab = "f(x)",
 
-          # from= -(prob^2),
-          # to = prob^2,
+          #from= 0,
+           #to = 1,
 
           col = "red",
           lwd = 3
@@ -188,13 +188,13 @@ graf_repartitii_dens <- function()
   }
 
   dens_hyper <- function(m, n, k){
-    curve(expr = dhyper(x = x, m = m, n = n, k = k),
+    curve(expr = dhyper(x = x*10, m = m, n = n, k = k),
           main = "The Hypergeometric Distribution",
           xlab = "x",
           ylab = "f(x)",
 
-          # from= 0,
-            # to = m+n,
+           from= 0,
+             #to = m+n,
 
           col = "red",
           lwd = 3
@@ -725,7 +725,7 @@ graf_repartitii_dens <- function()
 
   meniu <- function() {
     cat("1. Meniu Densitati Repartiție\n")
-    cat("2. Meniu Funcți de Repartiție\n")
+    cat("2. Meniu Funcții de Repartiție\n")
     cat("3. Functie aleatoare.\n")
 
     option <- as.numeric(readline(prompt = "Optiunea: "))
