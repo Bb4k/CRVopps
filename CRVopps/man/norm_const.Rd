@@ -4,7 +4,7 @@
 
 \title{norm_const}
 
-\description{calculates the normalization constant of a given function}
+\description{Calculates the normalization constant of a given function. The function must be pozitive.}
 \usage{norm_const()}
 
 \value{
