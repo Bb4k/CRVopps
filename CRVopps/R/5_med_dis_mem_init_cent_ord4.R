@@ -2,7 +2,7 @@
 #' initiale si centrate pana la ordinul 4(daca exista). Atunci cand unul dintre
 #' momente nu exista, se va afisa un mesaj corespunzator catre utilizator
 #'
-#' @param f Densitatea de probabilitate a variabilei aleatoare continue.
+#' @param f Functia de probabilitate a variabilei aleatoare continue.
 #' @return Media \code{medie}, dispersia \code{dispersie},
 #' lista de momente initiale \code{vector_mom_initial},
 #' lista de momente centrate \code{vector_mom_centrate}.

@@ -14,11 +14,11 @@ dens_marg_cond <- function(f_xy, lo_x, hi_x, lo_y, hi_y){
   dens_marg_x <- function(){
 
     params_1 = paste("x,", lo_y, ",", hi_y, sep="")
-    first_ramura <- yac_str(paste("Integrate(", params_1,")", trimws(deparse(f)[4])))
+    first_ramura <- yac_str(paste("Integrate(", params_1,")", trimws(deparse(f_xy)[4])))
     params_2 = paste("x,", -Inf, ",", lo_y, sep="")
     params_3 = paste("x,", hi_y, ",", Inf, sep="")
-    sec_ramura <-eval(yac_expr(paste("Integrate(", params_2,")", trimws(deparse(f)[7]))))+
-      eval(yac_expr(paste("Integrate(", params_3,")", trimws(deparse(f)[7]))))
+    sec_ramura <-eval(yac_expr(paste("Integrate(", params_2,")", trimws(deparse(f_xy)[7]))))+
+      eval(yac_expr(paste("Integrate(", params_3,")", trimws(deparse(f_xy)[7]))))
     cat(sprintf("Densitatea marginala fx:\nExpresia pe prima ramura: %s, %d<y<%d\nExpresia pe a doua a ramura: %s, in rest\n\n\n",
                 yac_str(paste("PrettyForm(", first_ramura,")")),lo_y,hi_y,yac_str(paste("PrettyForm(", sec_ramura,")"))))
 
@@ -30,11 +30,11 @@ dens_marg_cond <- function(f_xy, lo_x, hi_x, lo_y, hi_y){
   dens_marg_y <- function(){
 
     params_1 = paste("y,", lo_x, ",", hi_x, sep="")
-    first_ramura <- yac_str(paste("Integrate(", params_1,")", trimws(deparse(f)[4])))
+    first_ramura <- yac_str(paste("Integrate(", params_1,")", trimws(deparse(f_xy)[4])))
     params_2 = paste("y,", -Inf, ",", lo_x, sep="")
     params_3 = paste("y,", hi_x, ",", Inf, sep="")
-    sec_ramura <-eval(yac_expr(paste("Integrate(", params_2,")", trimws(deparse(f)[7]))))+
-      eval(yac_expr(paste("Integrate(", params_3,")", trimws(deparse(f)[7]))))
+    sec_ramura <-eval(yac_expr(paste("Integrate(", params_2,")", trimws(deparse(f_xy)[7]))))+
+      eval(yac_expr(paste("Integrate(", params_3,")", trimws(deparse(f_xy)[7]))))
     cat(sprintf("Densitatea marginala fy:\nExpresia pe prima ramura: %s, %d<x<%d\nExpresia pe a doua a ramura: %s, in rest\n\n\n",
                 yac_str(paste("PrettyForm(", first_ramura,")")),lo_x,hi_x,yac_str(paste("PrettyForm(", sec_ramura,")"))))
 
@@ -71,7 +71,6 @@ dens_marg_cond <- function(f_xy, lo_x, hi_x, lo_y, hi_y){
 
   dens_cond_x()
   dens_cond_y()
-
 
 }
 

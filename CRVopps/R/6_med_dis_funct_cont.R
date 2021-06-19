@@ -6,14 +6,14 @@
 #' @return Media \code{medie}, dispersia \code{dispersie}
 #' @examples
 #' medie_dispersie_func_cont(f)
-medie_dispersie_func_cont <- function(f){
+medie_dispersie_func_cont <- function(f, g){
 
   calc_medie <- function(x) {
-    x * f(x)
+    x * f(x) * g(x)
   }
 
   calc_patrat_medie <- function(x) {
-    x*x*f(x)
+    x * x * f(x) * g(x)
   }
 
   out <- tryCatch(
@@ -42,8 +42,16 @@ f <- function(x) {
   else 0
 }
 
+g <- function(x) {
+  if ((x >= 0) && (x <= pi)) {
+    sin(x) / 2
+  } else {
+    0
+  }
+}
 
-medie_dispersie_func_cont(f)
+
+medie_dispersie_func_cont(f, g)
 
 
 
